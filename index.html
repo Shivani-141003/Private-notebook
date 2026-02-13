@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome App</title>
+    <link rel="stylesheet" href="style.css">
+</head>  
+<body>
+    <h1>My Awesome App</h1>
+
+    <div id="profile-card" style="display: none; text-align: center; border: 1px solid #ccc; padding: 20px; border-radius: 10px; max-width: 500px; margin: 20px auto; background: white;">
+        <img id="user-avatar" src="" style="width: 80px; border-radius: 50%; border: 2px solid #007bff;">
+        <h2 id="user-name">Welcome Back!</h2>
+        <p id="user-email" style="color: #666;"></p>
+        <button onclick="signOut()" style="background: #ff4444; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">Sign Out</button>
+        
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+        <h3>📝 Private Notebook</h3>
+        <textarea id="note-content" placeholder="Write something secret..." style="width: 90%; height: 80px; padding: 10px; border-radius: 5px; border: 1px solid #ddd; font-family: sans-serif;"></textarea>
+        <br>
+        <button onclick="saveNote()" style="background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 95%;">
+            Save Note to Database
+        </button>
+        
+        <div id="notes-list" style="text-align: left; margin-top: 20px;">
+            </div>
+    </div>
+
+    <form id="login-form" onsubmit="return validateForm()" style="max-width: 400px; margin: auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+        <div style="margin-bottom: 15px;">
+            <label>Email:</label><br>
+            <input type="email" id="email" style="width: 100%; padding: 8px;">
+        </div>
+ 
+        <div style="margin-bottom: 15px;">
+            <label>Password:</label><br>
+            <input type="password" id="password" style="width: 100%; padding: 8px;">
+        </div>
+
+        <p id="message" style="font-weight: bold;"></p>
+
+        <button type="submit" style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+        
+        <p style="text-align: center; margin: 15px 0;">OR</p>
+
+        <button type="button" onclick="signInWithGoogle()" style="width: 100%; padding: 10px; background: white; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20">
+            Sign in with Google
+        </button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
